@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MR NDUBUISI DESMOND OKOYE - Developer Portfolio</title>
-
-  <!-- Custom CSS (optional) -->
+  <title>NDUBUISI OKOYE - Developer Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,7 +26,7 @@
   </script>
   <style>
     .devicon {
-      font-size: 4rem;
+      font-size: 3.5rem;
       color: #58A6FF;
     }
     .skill-card:hover .devicon {
@@ -40,6 +37,42 @@
     .section {
       scroll-margin-top: 80px;
     }
+    .project-card {
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #58A6FF;
+    }
+    /* Animation for the profile image */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .floating-img {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Skill bar styles */
+    .skill-bar {
+      width: 100%;
+      background-color: #2D3748;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .skill-progress {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #58A6FF, #2EA043);
+      transition: width 1s ease-in-out;
+    }
   </style>
 </head>
 <body class="bg-primary text-text-light font-sans">
@@ -47,12 +80,13 @@
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 w-full bg-secondary bg-opacity-90 backdrop-blur-sm z-50 shadow-lg">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-accent hover:text-white">NDUBUISI OKOYE</a>
+      <a href="#" class="text-xl font-bold text-accent hover:text-white">NDUBUISI OKOYE</a>
       <div class="hidden md:flex space-x-6">
         <a href="#about" class="hover:text-white">About</a>
         <a href="#skills" class="hover:text-white">Skills</a>
         <a href="#projects" class="hover:text-white">Projects</a>
         <a href="#contact" class="hover:text-white">Contact</a>
+        <a href="#resume" class="bg-accent text-primary px-4 py-1 rounded-md hover:bg-blue-400 transition">Resume</a>
       </div>
       <button id="menu-toggle" class="md:hidden text-text-light hover:text-white focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,6 +101,7 @@
         <a href="#skills" class="py-2 hover:bg-primary rounded-md">Skills</a>
         <a href="#projects" class="py-2 hover:bg-primary rounded-md">Projects</a>
         <a href="#contact" class="py-2 hover:bg-primary rounded-md">Contact</a>
+        <a href="#resume" class="py-2 bg-accent text-primary rounded-md hover:bg-blue-400">Resume</a>
       </div>
     </div>
   </nav>
@@ -74,162 +109,328 @@
   <!-- Hero -->
   <header id="hero" class="section text-center pt-32 pb-20">
     <div class="container mx-auto px-4">
-      <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">
-        Hello, I'm <span class="text-accent">MR NDUBUISI DESMOND OKOYE</span>.
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
+        Hello, I'm <span class="text-accent">NDUBUISI OKOYE</span>
       </h1>
       <p class="text-xl md:text-2xl text-text-dark max-w-2xl mx-auto mb-8">
         A passionate software developer specializing in creating seamless digital experiences.
       </p>
       <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <a href="#projects"
-          class="bg-accent text-primary px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">
+          class="bg-accent text-primary px-6 py-2 rounded-full font-bold shadow-lg hover:scale-105 transition">
           View My Work
         </a>
         <a href="#contact"
-          class="border-2 border-accent text-accent px-8 py-3 rounded-full font-bold hover:bg-accent hover:text-primary transition">
+          class="border border-accent text-accent px-6 py-2 rounded-full font-bold hover:bg-accent hover:text-primary transition">
           Get In Touch
+        </a>
+        <a href="resume.pdf" download
+          class="bg-green-600 text-white px-6 py-2 rounded-full font-bold shadow-lg hover:bg-green-500 transition">
+          Download Resume
         </a>
       </div>
     </div>
   </header>
 
   <!-- About -->
-  <section id="about" class="section bg-secondary py-20">
+  <section id="about" class="section bg-secondary py-16">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12 max-w-4xl">
-      <div class="w-full md:w-1/3">
-        <img src="https://placehold.co/400x400/161B22/58A6FF?text=Profile" alt="Profile"
-          class="w-full rounded-full border-4 border-accent shadow-lg">
+      <div class="w-full md:w-2/5">
+        <!-- Your uploaded image - Replace with your actual image file -->
+        <img src="image.jpg" alt="Ndubuisi Desmond Okoye"
+          class="w-64 h-64 mx-auto rounded-full border-4 border-accent shadow-lg object-cover floating-img">
       </div>
-      <div class="w-full md:w-2/3 text-center md:text-left">
-        <h2 class="text-4xl font-bold mb-4 text-white">About Me</h2>
-        <p class="text-lg text-text-dark">
+      <div class="w-full md:w-3/5 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-4 text-white">About Me</h2>
+        <p class="text-lg text-text-dark mb-4">
           I'm a software developer with a strong foundation in both front-end and back-end technologies. My passion lies
-          in building scalable applications that solve real-world problems. With a keen eye for detail and a love for
-          clean code, I create intuitive and engaging user interfaces. Always eager to learn and collaborate on
-          innovative solutions.
+          in building scalable applications that solve real-world problems.
+        </p>
+        <p class="text-lg text-text-dark">
+          With a keen eye for detail and a love for clean code, I create intuitive and engaging user interfaces. Always eager to learn and collaborate on innovative solutions.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="section bg-primary py-20">
+  <section id="skills" class="section bg-primary py-16">
     <div class="container mx-auto px-4 max-w-5xl">
-      <h2 class="text-4xl font-bold text-center mb-12 text-white">My Skills</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
+      <h2 class="text-3xl font-bold text-center mb-10 text-white">My Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- HTML5 -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-html5-plain devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">HTML5</h3>
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-html5-plain devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">HTML5</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">90%</div>
         </div>
 
         <!-- CSS3 -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-css3-plain devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">CSS3</h3>
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-css3-plain devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">CSS3</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">85%</div>
         </div>
 
         <!-- JavaScript -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-javascript-plain devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">JavaScript</h3>
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-javascript-plain devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">JavaScript</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">80%</div>
         </div>
 
         <!-- React -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-react-original devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">React</h3>
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-react-original devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">React</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">75%</div>
         </div>
 
         <!-- Node.js -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-nodejs-plain devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">Node.js</h3>
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-nodejs-plain devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">Node.js</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 70%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">70%</div>
         </div>
 
-        <!-- SQL/NoSQL -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-mongodb-plain devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">MongoDB</h3>
+        <!-- PostgreSQL -->
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-postgresql-plain devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">PostgreSQL</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">75%</div>
         </div>
 
         <!-- Git -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-git-plain devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">Git</h3>
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-git-plain devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">Git</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">85%</div>
         </div>
 
         <!-- Python -->
-        <div class="skill-card p-6 bg-secondary rounded-xl shadow-lg hover:scale-105 transition">
-          <i class="devicon-python-plain devicon mx-auto mb-4"></i>
-          <h3 class="text-xl font-semibold">Python</h3>
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-python-plain devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">Python</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">80%</div>
+        </div>
+
+        <!-- Flask -->
+        <div class="skill-card p-4 bg-secondary rounded-lg shadow hover:scale-105 transition">
+          <div class="flex items-center mb-3">
+            <i class="devicon-flask-original devicon mr-3"></i>
+            <h3 class="text-lg font-semibold">Flask</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"></div>
+          </div>
+          <div class="text-right mt-1 text-sm text-text-dark">75%</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="section bg-secondary py-20">
+  <section id="projects" class="section bg-secondary py-16">
     <div class="container mx-auto px-4 max-w-6xl">
-      <h2 class="text-4xl font-bold text-center mb-12 text-white">My Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-primary p-6 rounded-xl shadow-lg">
-          <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Project+1" class="rounded-lg mb-4 w-full">
-          <h3 class="text-2xl font-bold mb-2 text-white">Project Title One</h3>
-          <p class="text-text-dark mb-4">A brief description of your project.</p>
+      <h2 class="text-3xl font-bold text-center mb-10 text-white">My Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 - WAGS Global Services -->
+        <div class="project-card bg-primary p-5 rounded-lg shadow-lg">
+          <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=WAGS+Global+Services" alt="WAGS Global Services E-Commerce" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-bold mb-2 text-white">WAGS Global Services</h3>
+          <p class="text-text-dark mb-4">A full-stack e-commerce platform with React frontend and Node.js backend.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">React</span>
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">Node.js</span>
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">PostgreSQL</span>
+          </div>
+          <div class="flex space-x-3">
+            <a href="https://ndudesy01.github.io/wags-global-services/" target="_blank" class="text-accent hover:text-white text-sm">View Live</a>
+            <a href="https://github.com/ndudesy01/wags-global-services" target="_blank" class="text-accent hover:text-white text-sm">GitHub</a>
+
+          </div>
         </div>
-        <div class="bg-primary p-6 rounded-xl shadow-lg">
-          <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Project+2" class="rounded-lg mb-4 w-full">
-          <h3 class="text-2xl font-bold mb-2 text-white">Project Title Two</h3>
-          <p class="text-text-dark mb-4">A brief description of your project.</p>
+
+        <!-- Project 2 - Task Manager -->
+        <div class="project-card bg-primary p-5 rounded-lg shadow-lg">
+          <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Task+Manager+Coming+Soon" alt="Task Management App" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-bold mb-2 text-white">Task Management App</h3>
+          <p class="text-text-dark mb-4">A productivity app for managing tasks with drag-and-drop functionality. Coming soon!</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">JavaScript</span>
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">HTML/CSS</span>
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">LocalStorage</span>
+          </div>
+          <div class="flex space-x-3">
+            <a href="https://github.com/ndudesy01/portfolio1" target="_blank" class="text-accent hover:text-white text-sm">GitHub</a>
+          </div>
         </div>
-        <div class="bg-primary p-6 rounded-xl shadow-lg">
-          <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Project+3" class="rounded-lg mb-4 w-full">
-          <h3 class="text-2xl font-bold mb-2 text-white">Project Title Three</h3>
-          <p class="text-text-dark mb-4">A brief description of your project.</p>
+
+        <!-- Project 3 - Flask Practice Work -->
+        <div class="project-card bg-primary p-5 rounded-lg shadow-lg">
+          <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=DFlaskWork" alt="DFlaskWork Flask Application" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-bold mb-2 text-white">DFlaskWork</h3>
+          <p class="text-text-dark mb-4">A collection of Flask applications demonstrating backend development skills and API creation.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">Flask</span>
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">Python</span>
+            <span class="bg-accent text-primary text-xs px-2 py-1 rounded">REST API</span>
+          </div>
+          <div class="flex space-x-3">
+            <a href="https://ndudesy01.github.io/dflaskwork/" target="_blank" class="text-accent hover:text-white text-sm">View Live</a>
+            <a href="https://ndudesy01.github.io/dflaskwork/" target="_blank" class="text-accent hover:text-white text-sm">GitHub</a>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section bg-primary py-16">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold mb-6 text-white">My Resume</h2>
+      <p class="text-lg text-text-dark mb-8 max-w-2xl mx-auto">
+        Download my resume to learn more about my experience, education, and qualifications.
+      </p>
+      <a href="resume.pdf" download class="bg-accent text-primary px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition inline-block">
+        Download Resume
+      </a>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section bg-primary py-20">
+  <section id="contact" class="section bg-secondary py-16">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h2 class="text-4xl font-bold mb-4 text-white">Get In Touch</h2>
-      <p class="text-lg text-text-dark mb-8">
+      <h2 class="text-3xl font-bold mb-8 text-white">Get In Touch</h2>
+      <p class="text-lg text-text-dark mb-10 max-w-2xl mx-auto">
         I'm currently open to new opportunities. Feel free to contact me for collaborations or just to say hi!
       </p>
-      <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6 justify-center items-center">
 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Email Card -->
+        <div class="bg-primary p-6 rounded-xl shadow-lg">
+          <div class="contact-icon mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-white">Email</h3>
+          <a href="mailto:ndubuisiokoye174@gmail.com" class="text-accent hover:text-white break-all">
+            ndubuisiokoye174@gmail.com
+          </a>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="bg-primary p-6 rounded-xl shadow-lg">
+          <div class="contact-icon mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-white">Phone</h3>
+          <a href="tel:+2348037753977" class="text-accent hover:text-white">
+            +234 803 775 3977
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4">
         <!-- Email -->
         <a href="mailto:ndubuisiokoye174@gmail.com"
-          class="bg-secondary px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-accent hover:text-primary transition">
-          <span>Email: ndubuisiokoye174@gmail.com</span>
+          class="bg-primary px-5 py-3 rounded-full flex items-center space-x-2 hover:bg-accent hover:text-primary transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 极 002.22 0L21 8M5 19h14a2 2 0 002-2极7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Email</span>
         </a>
 
         <!-- Phone -->
         <a href="tel:+2348037753977"
-          class="bg-secondary px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-accent hover:text-primary transition">
-          <span>Phone: +2348037753977</span>
+          class="bg-primary px极5 py-3 rounded-full flex items-center space-x-2 hover:bg-accent hover:text-primary transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 极 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span>Phone</span>
         </a>
 
         <!-- WhatsApp -->
         <a href="https://wa.me/2348037753977" target="_blank"
-          class="bg-green-600 text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-green-500 transition">
-          <span>WhatsApp: +2348037753977</span>
+          class="bg-green-600 text-white px-5 py-3 rounded-full flex items-center space-x-2 hover:bg-green-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.150-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1极653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.520-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.010-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.360.195 1.871极118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-5.421 7.403h-.004a9.870 9.870 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.860 9.860 0 01-1.510-5.260c.001-5.450 4.436-9.884 9.888-9.884 2.640 0 5.122 1.030 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.450-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.050 0C5.495 0 .160 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.864 3.488"/>
+          </svg>
+          <span>WhatsApp</span>
         </a>
 
         <!-- GitHub -->
         <a href="https://github.com/ndudesy01" target="_blank"
-          class="bg-secondary px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-accent hover:text-primary transition">
+          class="bg-primary px-5 py-3 rounded-full flex items-center space-x-2 hover:bg-accent hover:text-primary transition">
+          <svg xmlns="http://www.w3.org/2000/s极g" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-极1.387-1.333-1.756-1.极333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.770.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.极199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
           <span>GitHub</span>
         </a>
-      </div>
-      <div class="text-center text-text-dark text-sm mt-12">
-        <p>&copy; 2024 MR NDUBUISI DESMOND OKOYE. All rights reserved.</p>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"
+          class="bg-blue-600 text-white px-5 py-3 rounded-full flex items-center space-x-2 hover:bg-blue-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 极 0 24 24">
+            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c极0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16极4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary py-8 border-t border-gray-800">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-text-dark text-sm">
+        &copy; 2024 NDUBUISI OKOYE. All rights reserved.
+      </p>
+    </div>
+  </footer>
 
   <!-- JS -->
   <script>
@@ -245,6 +446,51 @@
         mobileMenu.classList.add('hidden');
       });
     });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Animate skill bars when they come into view
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressBars = entry.target.querySelectorAll('.skill-progress');
+          progressBars.forEach(bar => {
+            // Reset width to 0 then animate to the specified width
+            const width = bar.style.width;
+            bar.style.width = '0';
+            setTimeout(() => {
+              bar.style.width = width;
+            }, 100);
+          });
+        }
+      });
+    }, observerOptions);
+
+    // Observe the skills section
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+      observer.observe(skillsSection);
+    }
   </script>
 </body>
 </html>
